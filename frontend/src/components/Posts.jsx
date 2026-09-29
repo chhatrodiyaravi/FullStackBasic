@@ -24,7 +24,7 @@ const Posts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/posts")
+      .get(`${import.meta.env.VITE_API_URL}/posts`)
       .then((res) => setPosts(res.data.posts))
       .catch((err) => console.log(err));
   }, []);

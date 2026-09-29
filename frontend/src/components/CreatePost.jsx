@@ -9,7 +9,7 @@ const CreatePost = () => {
     const formData = new FormData(e.target);
 
     axios
-      .post("http://localhost:5000/create-post", formData)
+      .post(`${import.meta.env.VITE_API_URL}/create-post`, formData)
       .then((res) => console.log(res), alert("post Created successfully"))
       .catch((err) => alert(`Somthing went to wrong${err}`));
 
