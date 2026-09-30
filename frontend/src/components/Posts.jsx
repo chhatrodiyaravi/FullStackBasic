@@ -4,27 +4,12 @@ import axios from "axios";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
-  //   const posts = [
-  //     {
-  //       id: 1,
-  //       image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  //       caption: "Beautiful nature 🌿",
-  //     },
-  //     {
-  //       id: 2,
-  //       image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390",
-  //       caption: "Exploring the city 🏙️",
-  //     },
-  //     {
-  //       id: 3,
-  //       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-  //       caption: "Perfect beach day 🌊",
-  //     },
-  //   ];
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/posts`)
+      .get(`${API_URL}posts`)
       .then((res) => setPosts(res.data.posts))
       .catch((err) => console.log(err));
   }, []);
